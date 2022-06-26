@@ -1,0 +1,10 @@
+Totally 6 pages - Registration, Login, Calendar, Filter/Search Meetings, Add Meettngs, teams
+
+Puranik Prashanth8:18 PM
+Registration - Name, Email, password, confirm password
+Login - Email, password
+
+
+Puranik Prashanth8:19 PM
+Registration button -> Login page
+Login button -> Calendar page

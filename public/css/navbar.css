@@ -1,0 +1,26 @@
+nav {
+    background-color: lightblue;
+    height:40px;
+    display: flex;
+    align-items: center;
+    
+  }
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
+
+.menu{
+   display: flex;
+   justify-content: space-between;
+   
+}
+
+.left-menu{
+    width: 280px;
+}
+.right-menu{
+    width: 280px;
+}
