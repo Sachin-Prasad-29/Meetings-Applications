@@ -1,0 +1,40 @@
+.register-div {
+  background-color: rgb(97, 197, 230);
+  padding-bottom: 2em;
+  border-radius: 10px 10px 0 0;
+  color: rgb(2, 5, 67);
+}
+.form-content {
+  padding: 5% 8%;
+  border-top: none;
+  background-color: rgba(85, 229, 248, 0.481);
+  border-radius: 0px 0px 10px 10px;
+  font-size: 0.8em;
+}
+form .input-box {
+  border: 1px solid lightgrey;
+  border-radius: 9px;
+  font-size: 15px;
+  padding: 10px;
+  margin: 0.5% 0 2% 0;
+  width: 100%;
+}
+.submit {
+  border: none;
+  background-color: rgb(6, 95, 238);
+  border-radius: 4px;
+  padding: 4px 15px;
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin: 1% 0;
+}
+
+@media all and (max-width: 650px) {
+  h1 {
+    font-size: 25px;
+  }
+  .login-quotes {
+    font-size: 0.8em;
+  }
+}
