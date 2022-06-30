@@ -1,0 +1,34 @@
+.calender-block {
+  width: 20%;
+  border: 1px solid lightgray;
+  font-size: 14px;
+  padding: 6px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.today-date-Cal-div {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.outer-container {
+  width: 89%;
+  margin: 0 auto;
+  height: 800px;
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+.outer-container .day {
+  width: 97%;
+  margin: 0px auto;
+  height: 40px;
+  background-color: rgba(98, 188, 240, 0.671);
+}
+
+.day-block {
+  display: flex;
+  align-items: center;
+  margin: 5px 1% 5px 0;
+}
