@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="external/@fortawesome/fontawesome-free/css/all.min.css" />
     <link rel="stylesheet" href="css/utils.css" />
     <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/pages/meeting.css">
     <link rel="stylesheet" href="css/pages/meetings-add-meetings.css" />
   </head>
   <body>
@@ -45,7 +46,65 @@
     <div class="container">
       <h1 class="mb-1">Meetings</h1>
       <hr />
-      
+      <div class="sub-title">
+        <div ><a href="meetings-filter-meetings.html" class="link-plain">Filter/Search meetings</a> </div>
+        <div class ="selected-sub-title"><a href="meetings-add-meetings.html" class="link-plain">Add a meeting</a> </div>
+      </div>
+      <div class="add-section bg-primary mt-1 mb-3">
+        <h2 class="mb-1">Add a new meeting</h2>
+        <hr>
+        <div>
+          <div>
+            <label for="date">Date</label>
+          </div>
+          <div>
+            <input type="date" id="date" name="date" class="add-block">
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <label for="start-time">Start time (hh:mm AM/PM)</label>
+          </div>
+          <div>
+            <input type="time" id="start-time" name="date" class="time-block">
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <label for="end-time">End time (hh:mm AM/PM)</label>
+          </div>
+          <div>
+            <input type="time" id="end-time" name="date" class="time-block">
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <label for="description">Description</label>
+          </div>
+          <div>
+            <textarea rows="1" cols="100%" name="description" id="description" class="add-block" placeholder="What is the agenda of the meeting ?">
+              </textarea>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <label for="email">EmailID's of attendees, or team's short</label>
+          </div>
+          <div>
+            <input type="email" id="email" name="email" class="add-block" placeholder="john@example.com">
+            <div><span>Seprate emailId's/team short names by commas- team short names always begin with @</span> </div>
+          </div>
+        </div>
+
+        <div>
+          <input type="submit" value="Add meeting" class="submit-button">
+        </div>
+
+      </div>
     </div>
     <script src="js/nav.js"></script>
   </body>
