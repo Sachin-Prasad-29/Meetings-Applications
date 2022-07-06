@@ -15,7 +15,6 @@
 .outer-container {
   width: 89%;
   margin: 0 auto;
-  height: 800px;
   font-size: 13px;
   margin-top: 20px;
 }
@@ -30,5 +29,9 @@
 .day-block {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin: 5px 1% 5px 0;
+}
+.block-date{
+  width: 15px;
 }

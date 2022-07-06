@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="external/@fortawesome/fontawesome-free/css/all.min.css" />
     <link rel="stylesheet" href="css/utils.css" />
     <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/pages/meeting.css">
     <link rel="stylesheet" href="css/pages/meetings-filter-meetings.css" />
   </head>
   <body>
@@ -19,33 +20,127 @@
             <li class="d-lg-none text-right">
               <button id="menu-button"><i class="fa-solid fa-bars"></i></button>
             </li>
-            <li class="nav-items d-sm-none">
+            <li class="nav-items d-sm-none p-menu-items">
               <a href="calender.html" class="link-plain items">Calender</a>
             </li>
-            <li class="nav-items d-sm-none">
+            <li class="nav-items d-sm-none p-menu-items  curr-page">
               <a href="meetings-add-meetings.html" class="link-plain items">Meetings</a>
             </li>
-            <li class="nav-items d-sm-none">
+            <li class="nav-items d-sm-none p-menu-items ">
               <a href="teams.html" class="link-plain items">Teams</a>
             </li>
           </ul>
         </div>
         <div>
           <ul class="list-unstyle menu right-menu">
-            <li class="nav-items d-sm-none">
+            <li class="nav-items d-sm-none p-menu-items ">
               <a href="" class="link-plain items">Hello <span class="primary">sachin@gmail.com</span>!</a>
             </li>
-            <li class="nav-items d-sm-none">
+            <li class="nav-items d-sm-none p-menu-items ">
               <a href="login.html" class="link-plain items">logout</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+
+
     <div class="container">
       <h1 class="mb-1">Meetings</h1>
       <hr />
-      
+      <div class="sub-title">
+        <div class ="selected-sub-title"><a href="meetings-filter-meetings.html" class="link-plain">Filter/Search meetings</a> </div>
+        <div ><a href="meetings-add-meetings.html" class="link-plain">Add a meeting</a> </div>
+        
+      </div>
+      <div class="add-section bg-primary mt-1">
+        <h2 class="mb-1">Search For meetings</h2>
+        <hr>
+        <form action="#" method="post">
+
+        <div >
+          <div>
+            <label for="date">Date</label>
+          </div>
+          <div class=" dropdown-menus  ">
+            <select name="cars" id="date" class="add-block">
+              <option value="all-meetings">ALL</option>
+              <option value="past-meeting">PAST</option>
+              <option value="todays-meeting">TODAY</option>
+              <option value="upcoming-meeting">UPCOMING</option>
+            </select>
+           
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <label for="search-for">Search for</label>
+          </div>
+          <div>
+            <textarea rows="2" cols="100%" name="search-for" id="search-for" class="add-block" placeholder="Search using words describe the meeting"></textarea>
+          </div>
+        </div>
+
+        <div>
+          <input type="submit" value="Search" class="submit-button">
+        </div>
+        </form>
+      </div>
+      <h2>Meetings matching search criteria</h2>
+      <hr />
+            <div class="search-result my-2">
+              <div class="mb-1">
+                <span class="meeting-date">12 September 2020 </span>
+                <span class="meeting-time">06:00 - 07:00</span>
+              </div>
+              <div class="meeting-name">Project Kickoff</div>
+               <div class="mb-2"><button class="btn btn-danger" id="excuse-yourself"> Excuse yourself</button></div>
+               <hr/>
+              <div class="attendees mb-1">
+                <span class="font-bold">Attendees:</span>
+                sachin@example.com,jane@example.com
+              </div>
+
+              <div class="select-mem-div">
+
+                <input list="members" name="members" class="select-members" placeholder="Select members">
+                <datalist id="members">
+                  <option value="sachin@example.com">
+                  <option value="sameer@example.com">
+                  <option value="xyz@fynd.com">
+                </datalist>
+                <input type="submit" value="Add" class="btn-primary btn select-members">
+                
+              </div>
+
+            </div>
+            <div class="search-result my-2">
+              <div class="mb-1">
+                <span class="meeting-date">12 September 2020 </span>
+                <span class="meeting-time">09:00 - 10:30</span>
+              </div>
+              <div class="meeting-name">MEVN workshop</div>
+               <div class="mb-2"><button class="btn btn-danger" id="excuse-yourself"> Excuse yourself</button></div>
+               <hr/>
+              <div class="attendees mb-1">
+                <span class="font-bold">Attendees:</span>
+                sachin@example.com,jane@example.com
+              </div>
+
+              <div class="select-mem-div">
+
+                <input list="members" name="members" class="select-members" placeholder="Select members">
+                <datalist id="members">
+                  <option value="sachin@example.com">
+                  <option value="sameer@example.com">
+                  <option value="xyz@fynd.com">
+                </datalist>
+                <input type="submit" value="Add" class="btn-primary btn select-members">
+                
+              </div>
+
+            </div>
     </div>
     <script src="js/nav.js"></script>
   </body>

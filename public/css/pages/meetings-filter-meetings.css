@@ -1,0 +1,30 @@
+.selected-sub-title {
+  border: 1px solid gray;
+  border-bottom: 1px solid white;
+  border-radius: 5px 5px 0px 0px;
+}
+.sub-title .selected-sub-title a {
+  color: black;
+}
+.dropdown-menus {
+  width: 102%;
+}
+.meeting-date {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+.meeting-time {
+  font-size: 0.9em;
+}
+.search-result {
+  border: 1px solid lightgray;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+}
+.select-members {
+  padding: 8px;
+}
+
+.select-mem-div .btn {
+  padding: 10px;
+}

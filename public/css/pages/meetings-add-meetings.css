@@ -1,0 +1,10 @@
+.selected-sub-title{
+    border: 1.5px solid gray;
+    border-bottom: none;
+    border-radius: 5px 5px 0px 0px;
+    
+  }
+  .sub-title .selected-sub-title a {
+    color: black;
+    
+  }
