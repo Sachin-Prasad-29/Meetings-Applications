@@ -1,0 +1,36 @@
+.teams-meetings{
+   display: grid;
+   gap: 1.5em;
+
+   grid-template-columns: repeat(1, 1fr);
+   
+   
+}
+@media all and (min-width:678px){
+  .teams-meetings{
+    grid-template-columns: repeat(2, 1fr); 
+ }
+}
+@media all and (min-width:1030px){
+  .teams-meetings{
+    grid-template-columns: repeat(3, 1fr); 
+ }
+}
+
+.content {
+  border: 1px solid rgba(128, 128, 128, 0.722);
+  padding: 10px;
+  border-radius: 5px;
+}
+.content-title {
+  font-size: 1.4em;
+}
+.content div {
+  margin: 10px;
+}
+.select-members {
+  padding: 8px;
+}
+.select-mem-div .btn {
+  padding: 10px;
+}

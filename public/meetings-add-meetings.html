@@ -20,23 +20,23 @@
             <li class="d-lg-none text-right">
               <button id="menu-button"><i class="fa-solid fa-bars"></i></button>
             </li>
-            <li class="nav-items d-sm-none">
+            <li class="nav-items d-sm-none p-menu-items ">
               <a href="calender.html" class="link-plain items">Calender</a>
             </li>
-            <li class="nav-items d-sm-none">
+            <li class="nav-items d-sm-none p-menu-items  curr-page">
               <a href="meetings-add-meetings.html" class="link-plain items">Meetings</a>
             </li>
-            <li class="nav-items d-sm-none">
+            <li class="nav-items d-sm-none p-menu-items ">
               <a href="teams.html" class="link-plain items">Teams</a>
             </li>
           </ul>
         </div>
         <div>
           <ul class="list-unstyle menu right-menu">
-            <li class="nav-items d-sm-none">
+            <li class="nav-items d-sm-none p-menu-items ">
               <a href="" class="link-plain items">Hello <span class="primary">sachin@gmail.com</span>!</a>
             </li>
-            <li class="nav-items d-sm-none">
+            <li class="nav-items d-sm-none p-menu-items ">
               <a href="login.html" class="link-plain items">logout</a>
             </li>
           </ul>
@@ -53,7 +53,9 @@
       <div class="add-section bg-primary mt-1 mb-3">
         <h2 class="mb-1">Add a new meeting</h2>
         <hr>
+        <form action="#" method="post">
         <div>
+          
           <div>
             <label for="date">Date</label>
           </div>
@@ -85,8 +87,7 @@
             <label for="description">Description</label>
           </div>
           <div>
-            <textarea rows="1" cols="100%" name="description" id="description" class="add-block" placeholder="What is the agenda of the meeting ?">
-              </textarea>
+            <textarea rows="1" cols="100%" name="description" id="description" class="add-block" placeholder="What is the agenda of the meeting ?"></textarea>
           </div>
         </div>
 
@@ -101,9 +102,9 @@
         </div>
 
         <div>
-          <input type="submit" value="Add meeting" class="submit-button">
+          <input type="submit" value="Add meeting" class="submit-button btn btn-primary">
         </div>
-
+</form>
       </div>
     </div>
     <script src="js/nav.js"></script>
