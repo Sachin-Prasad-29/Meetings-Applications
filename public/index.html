@@ -14,41 +14,45 @@
         <div class="div-center"><h1>Register for Free</h1></div>
         <div class="div-center login-quotes">Access and Manage all your meetings</div>
       </div>
-      <div class="form-content">
-        <form action="login.html" method="post">
-        <div>
-          <label for="username">Username</label>
-        </div>
-        <div>
-          <input type="text" id="username" name="username" class="input-box" placeholder="Jone_Doe" />
-        </div>
+      <form action="login.html" method="post" id="register-form">
+        <div class="form-content">
+          <div>
+            <label for="username">Username</label>
+          </div>
+          <div>
+            <input type="text" id="username" name="username" class="input-box" placeholder="Jone_Doe" />
+          </div>
 
-        <div>
-          <label for="email">Email</label>
-           </div>
-            <div>
-          <input type="email" name="email" id="email" class="input-box" placeholder="jonn123@gmail.com" />
+          <div>
+            <label for="email">Email</label>
+          </div>
+          <div>
+            <input type="email" name="email" id="email" class="input-box" placeholder="jonn123@gmail.com" />
+          </div>
+          <div>
+            <label for="password">Password</label>
+          </div>
+          <div><input type="password" name="password" id="password" class="input-box" placeholder="Password" /></div>
+          <div>
+            <label for="confirm-Password">Confirm Password</label>
+          </div>
+          <div>
+            <input
+              type="password"
+              name="Confirmpassword"
+              class="input-box"
+              id="confirm-Password"
+              placeholder="Confirm password"
+            />
+          </div>
+
+          <div>
+            <input type="submit" class="submit" />
+          </div>
+          <div>Already have an account? <a href="login.html" class="secondary"> Log in</a></div>
         </div>
-        <div>
-          <label for="password">Password</label>
-        </div>
-        <div><input type="password" name="password" id="password" class="input-box" placeholder="Password" /></div>
-        <div>
-          <label for="confirmPassword">Confirm Password</label>
-        </div>
-        <div><input type="password" name="Confirmpassword" class="input-box" id="confirmpassword" placeholder="Confirm password" /></div>
-        <input type="checkbox" id="Iagree" value="Iagree" name="Iagree" />
-        <label for="Iagree">I agree to all terms</label>
-        
-        
-        <div>
-          <input type="submit" class="submit"/>
-        </div>
-        <div>
-            Already have an account? <a href="login.html" class=" secondary"> Log in</a> 
-        </div>
-      </div>
-    </form>
+      </form>
     </div>
+    <script src="js/pages/register.js"></script>
   </body>
 </html>
