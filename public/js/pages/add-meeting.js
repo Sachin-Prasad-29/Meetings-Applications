@@ -1,4 +1,43 @@
 // nav bar email show function when the page loads
+
+const allEmailFromTeam = [];
+const allAttendeesEmailFromAtt = [];
+
+const addMeeting = async (data) => {
+  const raw = JSON.stringify(data);
+  //console.log(raw);
+
+  const requestOptions = {
+    method: "POST",
+    headers: { 'Content-Type':'application/json',
+      Authorization: localStorage.getItem("token") },
+    body: raw,
+    redirect: "follow",
+  };
+  //console.log(requestOptions);
+  const response = await fetch(`https://mymeetingsapp.herokuapp.com/api/meetings`, requestOptions);
+  //console.log(response);
+  if (!response.ok) {
+        const responseText = await response.text();
+        throw new Error(responseText || "Some error occured");
+      } 
+        
+        // location.href = "login.html";
+  // try{
+  //   if (!response.ok) {
+  //     const responseText = await response.text();
+  //     throw new Error(responseText || "Some error occured");
+  //   } else {
+  //     alert("Regertered success");
+  //     // location.href = "login.html";
+  //   }
+  // }catch(error){
+  //  alert("cathc error");
+  // }
+  
+  return response.json();
+};
+
 const showUserEmail = () => {
   const userEl = document.querySelector("#loged-in-user");
   let userDetails = localStorage.getItem("email");
@@ -28,6 +67,7 @@ const isEmailValid = async (attendeesArr) => {
     let flag = true;
     for (let j = 0; j < allUserdata.length; j++) {
       if (attendeesArr[i] === allUserdata[j].email) {
+        allAttendeesEmailFromAtt.push(attendeesArr[i]);
         flag = false;
         break;
       }
@@ -53,12 +93,16 @@ const isTeamValid = async (attendeesArr) => {
   const allteamdata = await response.json();
   // console.log("this data form fetch team  ", allteamdata);
   //console.log("team validation runed");
+
   for (let i = 0; i < attendeesArr.length; i++) {
     if (attendeesArr[i][0] !== "@") continue;
     let flag = true;
     let team = attendeesArr[i].substring(1);
     for (let j = 0; j < allteamdata.length; j++) {
       if (team === allteamdata[j].shortName) {
+        for (let k = 0; k < allteamdata[j].members.length; k++) {
+          allEmailFromTeam.push(allteamdata[j].members[k].email);
+        }
         flag = false;
         break;
       }
@@ -75,24 +119,42 @@ const isAttendeesValid = async (attendees) => {
   for (let i = 0; i < attendeesArr.length; i++) {
     attendeesArr[i] = attendeesArr[i].trim();
   }
- // console.log("this data we got form the user  ", attendeesArr);
+  // console.log("this data we got form the user  ", attendeesArr);
 
   const checkEmail = await isEmailValid(attendeesArr);
-
   if (!checkEmail) {
     alert("user with email not present ");
     return false;
   }
 
-
   const checkTeam = await isTeamValid(attendeesArr);
-
   if (!checkTeam) {
     alert("Team not Present");
     return false;
   }
 
   return true;
+};
+
+// this function will return the right format needed for the adding the data the meeting
+const getDataInFormat = async (meetingData) => {
+  // console.log("This=>",meetingData.attendeesArr);
+  const correctDataOrder = {
+    name: meetingData.name,
+    description: meetingData.description,
+    date: meetingData.date,
+    startTime: {
+      hours: parseInt(meetingData.startTime.substring(0, 2)),
+      minutes: parseInt(meetingData.startTime.substring(3, 5)),
+    },
+    endTime: {
+      hours: parseInt(meetingData.endTime.substring(0, 2)),
+      minutes: parseInt(meetingData.endTime.substring(3, 5)),
+    },
+    attendees: meetingData.attendeesArr,
+  };
+  return correctDataOrder;
+  //console.log("This is the final object", correctDataOrder);
 };
 
 // this methods takes all the data form the form
@@ -106,13 +168,35 @@ async function onAddMeetingSubmit(event) {
   const description = document.getElementById("description").value;
   const attendees = document.getElementById("attendees").value;
 
-  console.log(name, date, startTime, endTime, description, attendees);
+  //console.log(name, date, startTime, endTime, description);
+
+  //console.log(attendees);
   const isValidAtt = await isAttendeesValid(attendees);
   if (isValidAtt) {
-    console.log(" All the Attendees are valid ");900
+    console.log(" All the Attendees are valid ");
+    // console.log(allEmailFromTeam , allEmailFromTeam.length);
+    // console.log(allAttendeesEmailFromAtt);
+
+    let attendeesArr = allEmailFromTeam.concat(allAttendeesEmailFromAtt);
+    //attendeesArr = attendeesArr.map((email) => ({email}));
+    // console.log(attendeesArr);
+  
+    const meetingData = { name, date, startTime, endTime, description, attendeesArr };
+    //console.log(attendeesArr);
+    //console.log(meetingData);
+    const correctDataOrder = await getDataInFormat(meetingData);
+    //console.log(correctDataOrder);
+    try {
+      const addedMeeting = await addMeeting(correctDataOrder);
+      alert(`${addedMeeting.name} added to your Meeting List`);
+    } catch (error) {
+      alert(error.message);
+    }
+
   } else {
     console.log("attendees or team not present in the data");
   }
+ 
 
   // const data = { name, email, password, confirmPassword };
   // const registrationDetails = { name, email, password };
@@ -125,6 +209,5 @@ async function onAddMeetingSubmit(event) {
 
 document.addEventListener("DOMContentLoaded", function () {
   showUserEmail();
-
   document.querySelector("#add-meetings").addEventListener("submit", onAddMeetingSubmit);
 });

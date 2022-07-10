@@ -45,3 +45,7 @@
 .submit-button:active {
   background-color: rgb(61, 78, 104);
 }
+
+.dropdown-menus #date {
+  width: 96%;
+}

@@ -137,3 +137,7 @@ nav ul li a:hover {
     display: none;
   }
 }
+
+.log-out{
+  cursor: pointer;
+}

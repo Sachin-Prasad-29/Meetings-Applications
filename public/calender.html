@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calender</title>
+    <script src="js/services/check-auth.js"></script>
     <link rel="stylesheet" href="external/normalize.css/normalize.css" />
     <link rel="stylesheet" href="external/@fortawesome/fontawesome-free/css/all.min.css" />
     <link rel="stylesheet" href="css/utils.css" />
@@ -36,7 +37,7 @@
               <a href="" class="link-plain items" id="loged-in-user"></a>
             </li>
             <li class="nav-items d-sm-none p-menu-items">
-              <a href="login.html" class="link-plain items">logout</a>
+              <a class="link-plain items" id="log-out">logout</a>
             </li>
           </ul>
         </div>
@@ -47,7 +48,7 @@
       <hr />
       <div class="today-date-Cal-div">
         <h3 class="todays-date m-0" id="today-date"></h3>
-        <input type="date" id="myDate" value="2022-01-01" class="calender-block" onchange="handler(event);"/>
+        <input type="date" id="myDate" value="2022-01-01" class="calender-block" onchange="handler(event);" />
       </div>
       <div class="text-gray font-bold" id="todays-day">Saturday</div>
     </div>
