@@ -1,23 +1,40 @@
-.teams-meetings{
+
+.main-team-block{
+  display: grid;
+  gap: 1.5em;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+
+.teams-info{
    display: grid;
    gap: 1.5em;
-
-   grid-template-columns: repeat(1, 1fr);
-   
-   
+   grid-template-columns: repeat(1, 1fr);  
 }
 @media all and (min-width:678px){
-  .teams-meetings{
-    grid-template-columns: repeat(2, 1fr); 
+  .main-team-block{
+    display: grid;
+    gap: 1.5em;
+    grid-template-columns: 1fr 1fr;
+  }
+  .teams-info{
+    grid-template-columns: repeat(1, 1fr); 
  }
 }
 @media all and (min-width:1030px){
-  .teams-meetings{
-    grid-template-columns: repeat(3, 1fr); 
+
+  .main-team-block{
+    display: grid;
+    gap: 1.5em;
+    grid-template-columns: 2fr 1fr;
+  }
+  .teams-info{
+    grid-template-columns: repeat(2, 1fr); 
  }
+ 
 }
 
-.content {
+.content  {
   border: 1px solid rgba(128, 128, 128, 0.722);
   padding: 10px;
   border-radius: 5px;

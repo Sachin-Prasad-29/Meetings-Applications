@@ -30,8 +30,7 @@ nav {
 }
 
 .nav-items {
-  
-  padding: 15px 15px;
+  padding: 12px 10px;
   width: auto;
 }
 
@@ -47,10 +46,10 @@ nav {
 #menu-button:hover {
   background-color: rgba(174, 179, 179, 0.998);
 }
-.nav-items:hover{
+.nav-items:hover {
   background-color: rgba(173, 214, 220, 0.578);
 }
-.nav-items a:hover{
+.nav-items a:hover {
   columns: white;
 }
 @media all and (max-width: 750px) {
@@ -91,4 +90,8 @@ nav {
   .p-menu-items {
     padding: 5px;
   }
+}
+
+#log-out {
+  cursor: pointer;
 }

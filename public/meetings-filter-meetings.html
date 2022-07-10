@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Filter meetings</title>
+    <script src="js/services/check-auth.js"></script>
     <link rel="stylesheet" href="external/normalize.css/normalize.css" />
     <link rel="stylesheet" href="external/@fortawesome/fontawesome-free/css/all.min.css" />
     <link rel="stylesheet" href="css/utils.css" />
@@ -52,31 +53,31 @@
       <div class="add-section bg-primary mt-1">
         <h2 class="mb-1">Search For meetings</h2>
         <hr />
-        <form action="#" method="post">
+        <form action="#" id="filter-meetings"  method="post">
           <div>
             <div>
-              <label for="date">Date</label>
+              <label for="period">Date</label>
             </div>
             <div class="dropdown-menus">
-              <select name="cars" id="date" class="add-block add-block-filter">
-                <option value="all-meetings">ALL</option>
-                <option value="past-meeting">PAST</option>
-                <option value="todays-meeting">TODAY</option>
-                <option value="upcoming-meeting">UPCOMING</option>
+              <select name="period" id="period" class="add-block add-block-filter">
+                <option value="all">ALL</option>
+                <option value="past">PAST</option>
+                <option value="present">TODAY</option>
+                <option value="future">UPCOMING</option>
               </select>
             </div>
           </div>
 
           <div>
             <div>
-              <label for="search-for">Search for</label>
+              <label for="search">Search for</label>
             </div>
             <div>
               <textarea
                 rows="2"
                 cols="100%"
-                name="search-for"
-                id="search-for"
+                name="search"
+                id="search"
                 class="add-block"
                 placeholder="Search using words describe the meeting"
               ></textarea>
@@ -90,55 +91,36 @@
       </div>
       <h2>Meetings matching search criteria</h2>
       <hr />
-      <div class="search-result my-2">
-        <div class="mb-1">
-          <span class="meeting-date">12 September 2020 </span>
-          <span class="meeting-time">06:00 - 07:00</span>
-        </div>
-        <div class="meeting-name">Project Kickoff</div>
-        <div class="mb-2"><button class="btn btn-danger" id="excuse-yourself">Excuse yourself</button></div>
-        <hr />
-        <div class="attendees mb-1">
-          <span class="font-bold">Attendees:</span>
-          sachin@example.com, jane@example.com
-        </div>
+      <div id="filter-meeting-details">
+       
+        <!-- <div class="search-result my-2">
+          <div class="mb-1">
+            <span class="meeting-date">12 September 2020 </span>
+            <span class="meeting-time">06:00 - 07:00</span>
+          </div>
+          <div class="meeting-name">Project Kickoff</div>
+          <div class="mb-2"><button class="btn btn-danger" id="excuse-yourself">Excuse yourself</button></div>
+          <hr />
+          <div class="attendees mb-1">
+            <span class="font-bold">Attendees:</span>
+            sachin@example.com, jane@example.com
+          </div>
 
-        <div class="select-mem-div">
-          <input list="members" name="members" class="select-members" placeholder="Select members" />
-          <datalist id="members">
-            <option value="sachin@example.com"></option>
-            <option value="sameer@example.com"></option>
-            <option value="xyz@fynd.com"></option>
-          </datalist>
+          <div class="select-mem-div">
+            <input list="members" name="members" class="select-members" placeholder="Select members" />
+            <datalist id="members">
+              <option value="sachin@example.com"></option>
+              <option value="sameer@example.com"></option>
+              <option value="xyz@fynd.com"></option>
+            </datalist>
 
-          <input type="submit" value="Add" class="btn-primary btn select-members" />
-        </div>
-      </div>
-      <div class="search-result my-2">
-        <div class="mb-1">
-          <span class="meeting-date">12 September 2020 </span>
-          <span class="meeting-time">09:00 - 10:30</span>
-        </div>
-        <div class="meeting-name">MEVN workshop</div>
-        <div class="mb-2"><button class="btn btn-danger" id="excuse-yourself">Excuse yourself</button></div>
-        <hr />
-        <div class="attendees mb-1">
-          <span class="font-bold">Attendees:</span>
-          sachin@example.com, jane@example.com
-        </div>
-
-        <div class="select-mem-div">
-          <input list="members" name="members" class="select-members" placeholder="Select members" />
-          <datalist id="members">
-            <option value="sachin@example.com"></option>
-            <option value="sameer@example.com"></option>
-            <option value="xyz@fynd.com"></option>
-          </datalist>
-
-          <input type="submit" value="Add" class="btn-primary btn select-members" />
-        </div>
+            <input type="submit" value="Add" class="btn-primary btn select-members" />
+          </div>
+        </div> -->
+      
       </div>
     </div>
     <script src="js/nav.js"></script>
+    <script src="js/pages/filer-meetings.js"></script>
   </body>
 </html>
