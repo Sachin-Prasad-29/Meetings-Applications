@@ -45,19 +45,19 @@ const addEveryMeeting = (MeetingName, attendees, startTime, endTime) => {
   const meetingTimeContainerEl = document.querySelector(".main-meeting-details-div");
   let meetingTimeContainerStr = "";
 
-  let attendeesList = attendees.join(", ");
+  let attendeesList = attendees.join(" ");
 
   const meetingStr = `
   <div class="meeing-guider">
      <div class="hours-block">
-     <div class="block-time">0</div>
-     <div
-       class="meeting-detail-div"
-       style="width:96%; margin-top:  ${startTime}px; height:  ${endTime}px"> 
-     <p class="m-0 p-0 font-bold">${MeetingName}</p>
-     <hr/>
-     <p class="m-0 p-0"><span class="font-bold">Attendees:</span> ${attendeesList}</p>
-     </div>
+        <div class="block-time"></div>
+        <div
+          class="meeting-detail-div"
+          style="width:96%; margin-top:  ${startTime}px; height:  ${endTime}px"> 
+          <p class="m-0 p-0 font-bold">${MeetingName}</p>
+          <hr/>
+          <span class="font-bold">Attendees:</span> ${attendeesList}
+        </div>
      </div>
      `;
   meetingTimeContainerStr += meetingStr;
