@@ -42,7 +42,7 @@ nav {
 #menu-button:hover {
   background-color: rgba(174, 179, 179, 0.998);
 }
-@media all and (max-width: 676px) {
+@media all and (max-width: 750px) {
   nav {
     height: auto;
   }

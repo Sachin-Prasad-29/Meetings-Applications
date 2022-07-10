@@ -8,3 +8,16 @@ menuButton.addEventListener("click", function () {
     navItems[i].classList.toggle("d-sm-none");
   }
 });
+
+const logout = () => {
+  console.log("This is called ");
+  localStorage.removeItem("token");
+  localStorage.removeItem("email");
+  localStorage.removeItem("name");
+  localStorage.removeItem("message");
+};
+
+document.getElementById('log-out').addEventListener("click", function () {
+    logout();
+    window.location = "/login.html";
+  });
