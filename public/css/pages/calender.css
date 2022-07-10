@@ -38,6 +38,9 @@
   width: 15px;
   font-size: 0.9em;
 }
+.timer-guider {
+  width: 90%;
+}
 
 .meeting-time-container {
   display: grid;
@@ -61,7 +64,7 @@
   border: 1px solid rgb(164, 161, 161);
   border-radius: 1px;
   display: inline-block;
-  white-space: nowrap;
+
   overflow: hidden !important;
   text-overflow: ellipsis;
 
