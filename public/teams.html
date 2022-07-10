@@ -13,32 +13,28 @@
   </head>
   <body>
     <nav>
-      <div class="container nav-container">
-        <div>
-          <ul class="list-unstyle menu left-menu">
-            <li class="d-lg-none text-right">
-              <button id="menu-button"><i class="fa-solid fa-bars"></i></button>
-            </li>
-            <li class="nav-items d-sm-none p-menu-items">
-              <a href="calender.html" class="link-plain items">Calender</a>
-            </li>
-            <li class="nav-items d-sm-none p-menu-items">
-              <a href="meetings-add-meetings.html" class="link-plain items">Meetings</a>
-            </li>
-            <li class="nav-items d-sm-none p-menu-items curr-page">
-              <a href="teams.html" class="link-plain items">Teams</a>
-            </li>
-          </ul>
+      <div class="container nav-ele-grid">
+        <div class="ele-grid list-unstyle menu left-menu">
+          <div class="d-lg-none display-inline">
+            <button id="menu-button"><i class="fa-solid fa-bars"></i></button>
+          </div>
+          <div class="nav-items d-sm-none  float-left">
+            <a href="calender.html" class="link-plain items">Calender</a>
+          </div>
+          <div class="nav-items d-sm-none float-left">
+            <a href="meetings-add-meetings.html" class="link-plain items">Meetings</a>
+          </div>
+          <div class="nav-items d-sm-none curr-page float-left">
+            <a href="teams.html" class="link-plain items">Teams</a>
+          </div>
         </div>
-        <div>
-          <ul class="list-unstyle menu right-menu">
-            <li class="nav-items d-sm-none p-menu-items">
-              <a href="" class="link-plain items">Hello <span class="primary">sachin@gmail.com</span>!</a>
-            </li>
-            <li class="nav-items d-sm-none p-menu-items">
-              <a href="login.html" class="link-plain items">logout</a>
-            </li>
-          </ul>
+        <div class="ele-grid list-unstyle menu right-menu">
+          <div class="nav-items d-sm-none float-right">
+            <a class="link-plain items" id="log-out">logout</a>
+          </div>
+          <div class="nav-items d-sm-none float-right">
+            <a href="" class="link-plain items" id="loged-in-user"></a>
+          </div>
         </div>
       </div>
     </nav>

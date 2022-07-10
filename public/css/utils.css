@@ -113,13 +113,13 @@ hr {
   color: rgba(128, 128, 128, 0.787);
 }
 
-nav ul li a:hover {
+nav div div a:hover {
   color: rgb(0, 110, 255);
 }
 .curr-page {
   color: rgba(0, 0, 0, 0.99);
   font-weight: 600;
-  background-color: rgba(181, 179, 179, 0.692);
+  background-color: rgba(20, 168, 221, 0.692);
 }
 .btn-primary {
   background-color: rgb(15, 116, 248);
@@ -140,4 +140,7 @@ nav ul li a:hover {
 
 .log-out{
   cursor: pointer;
+}
+.display-line{
+  display:inline;
 }

@@ -1,37 +1,42 @@
 nav {
   background-color: rgba(231, 232, 232, 0.998);
   height: auto;
-  display: flex;
-  align-items: center;
-}
-.nav-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 
-.menu {
-  display: flex;
+.nav-ele-grid {
+  display: grid;
+  gap: 3em;
+  grid-template-columns: 40% 50%;
   justify-content: space-between;
 }
+.nav-ele-grid .left-menu {
+  /* for subgroup */
+  display: inline;
+}
 
-/* .left-menu {
-  width: 230px;
+.nav-ele-grid .right-menu {
+  /* for subgroup */
+  display: inline;
 }
-.right-menu {
-  width: 245px;
-} */
-.p-menu-items {
-  padding: 15px;
+.test1 {
+  width: 100px;
+  float: left;
 }
-.no-right-padding {
-  padding-right: 0;
+.float-left {
+  float: left;
 }
-.no-left-padding {
-  padding-left: 0;
+.float-right {
+  float: right;
 }
+
+.nav-items {
+  
+  padding: 15px 15px;
+  width: auto;
+}
+
 #menu-button {
-  margin-bottom: 5px;
+  margin: 10px 5px 10px 0px;
   font-size: 1.2em;
   padding: 3px 8px;
   border: 1px solid rgb(148, 148, 148);
@@ -42,15 +47,38 @@ nav {
 #menu-button:hover {
   background-color: rgba(174, 179, 179, 0.998);
 }
+.nav-items:hover{
+  background-color: rgba(173, 214, 220, 0.578);
+}
+.nav-items a:hover{
+  columns: white;
+}
 @media all and (max-width: 750px) {
+  .float-left,
+  .float-right {
+    float: none;
+  }
+
+  .nav-items {
+    width: 100%;
+  }
+
+  .nav-ele-grid,
+  .nav-ele-grid .right-menu,
+  .nav-ele-grid .left-menu {
+    display: block;
+  }
+  .display-in {
+    display: block;
+  }
   nav {
     height: auto;
   }
   .left-menu {
-    width: 600px;
+    width: auto;
   }
   .right-menu {
-    width: 600px;
+    width: auto;
   }
 
   ul li {
