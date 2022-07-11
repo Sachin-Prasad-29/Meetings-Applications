@@ -9,8 +9,7 @@ const addMeeting = async (data) => {
 
   const requestOptions = {
     method: "POST",
-    headers: { 'Content-Type':'application/json',
-      Authorization: localStorage.getItem("token") },
+    headers: { "Content-Type": "application/json", Authorization: localStorage.getItem("token") },
     body: raw,
     redirect: "follow",
   };
@@ -18,11 +17,11 @@ const addMeeting = async (data) => {
   const response = await fetch(`https://mymeetingsapp.herokuapp.com/api/meetings`, requestOptions);
   //console.log(response);
   if (!response.ok) {
-        const responseText = await response.text();
-        throw new Error(responseText || "Some error occured");
-      } 
-        
-        // location.href = "login.html";
+    const responseText = await response.text();
+    throw new Error(responseText || "Some error occured");
+  }
+
+  // location.href = "login.html";
   // try{
   //   if (!response.ok) {
   //     const responseText = await response.text();
@@ -34,7 +33,7 @@ const addMeeting = async (data) => {
   // }catch(error){
   //  alert("cathc error");
   // }
-  
+
   return response.json();
 };
 
@@ -180,7 +179,7 @@ async function onAddMeetingSubmit(event) {
     let attendeesArr = allEmailFromTeam.concat(allAttendeesEmailFromAtt);
     //attendeesArr = attendeesArr.map((email) => ({email}));
     // console.log(attendeesArr);
-  
+
     const meetingData = { name, date, startTime, endTime, description, attendeesArr };
     //console.log(attendeesArr);
     //console.log(meetingData);
@@ -192,11 +191,9 @@ async function onAddMeetingSubmit(event) {
     } catch (error) {
       alert(error.message);
     }
-
   } else {
     console.log("attendees or team not present in the data");
   }
- 
 
   // const data = { name, email, password, confirmPassword };
   // const registrationDetails = { name, email, password };
