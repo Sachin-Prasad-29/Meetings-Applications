@@ -11,6 +11,25 @@
    gap: 1.5em;
    grid-template-columns: repeat(1, 1fr);  
 }
+
+.add-team-element{
+  width: 100%;
+  padding: 7px;
+  font-size: 0.9em;
+  margin-bottom: 0.7em;
+
+}
+
+.add-team-button{
+  width: 95%;
+  padding: 10px;
+  font-size: 0.9em;
+  margin-bottom: 0.7em;
+  margin-left: 2.5%;
+  
+}
+
+
 @media all and (min-width:678px){
   .main-team-block{
     display: grid;

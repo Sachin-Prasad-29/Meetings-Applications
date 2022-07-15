@@ -1,7 +1,7 @@
 // this method will show all the user in the system at select member option
 let period;
 let search;
-let myEmail ;
+let myEmail;
 const getAllUserEmail = async () => {
   const response = await fetch(`https://mymeetingsapp.herokuapp.com/api/users`, {
     headers: {
@@ -111,23 +111,23 @@ const disPlayAllFetchedMeetings = async (data) => {
   addExcuseYourselfHandler();
 };
 
-const addAttendees = async (event) => {
+const addAttendeesToMeeting = async (event) => {
   event.preventDefault();
   const form = event.target;
   const userId = form.closest(".search-result");
   const id = userId.getAttribute("data-id");
-  let email ;
+  let email;
   console.log(id);
-  const all_email = document.querySelectorAll('#emails');
+  const all_email = document.querySelectorAll("#emails");
   all_email.forEach((emails) => {
-    if(emails.value !== ""){
+    if (emails.value !== "") {
       email = emails.value;
     }
   });
   console.log(email);
   console.log("this is the data");
 
-  var requestOptions = {
+  let requestOptions = {
     method: "PATCH",
     headers: { "Content-Type": "application/json", Authorization: localStorage.getItem("token") },
     redirect: "follow",
@@ -153,8 +153,7 @@ const addAttendees = async (event) => {
   }
 };
 
-
-const excuseYourself = async (event) => {
+const excuseYourselfFromMeeting = async (event) => {
   event.preventDefault();
   const excuse = event.target;
   const userId = excuse.closest(".search-result");
@@ -163,7 +162,6 @@ const excuseYourself = async (event) => {
 
   console.log(id);
   console.log(email);
-
 
   var requestOptions = {
     method: "PATCH",
@@ -179,7 +177,7 @@ const excuseYourself = async (event) => {
     const responseText = await response.text();
     throw new Error(responseText || "Some error occured");
   }
-   //alert("Removed Successfully");
+  //alert("Removed Successfully");
   try {
     const response = await getMeetingDetails(period, search);
     // console.log(response.length);
@@ -189,11 +187,7 @@ const excuseYourself = async (event) => {
   } catch (error) {
     console.log(error.message);
   }
-
-
-  
-
-}
+};
 
 // this funciton fetch the meeting details based on period and searched passed
 const getMeetingDetails = async (period, search) => {
@@ -211,14 +205,15 @@ const getMeetingDetails = async (period, search) => {
 };
 
 const addExcuseYourselfHandler = () => {
-  document.querySelectorAll(".excuse-yourself").forEach((excuse) =>{
-    excuse.addEventListener("click", excuseYourself)
-  })
-}
+  document.querySelectorAll(".excuse-yourself").forEach((excuse) => {
+    console.log("hi");
+    excuse.addEventListener("click", excuseYourselfFromMeeting);
+  });
+};
 
 const addAddAttendeeHandler = () => {
   document.querySelectorAll(".add-member-to-meeting").forEach((form) => {
-    form.addEventListener("submit", addAttendees);
+    form.addEventListener("submit", addAttendeesToMeeting);
   });
 };
 
@@ -240,8 +235,8 @@ async function onFilterMeetings(event) {
     await disPlayAllFetchedMeetings(response);
     console.log("I finished task");
   } catch (error) {
-    if(error.message === `Cannot set properties of null (setting 'innerHTML')`)
-       alert(" No meeting found the Selected period");
+    if (error.message === `Cannot set properties of null (setting 'innerHTML')`)
+      alert(" No meeting found the Selected period");
     console.log(error.message);
   }
 }
