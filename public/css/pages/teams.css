@@ -56,7 +56,7 @@
 .content  {
   border: 1px solid rgba(128, 128, 128, 0.722);
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 0px;
 }
 .content-title {
   font-size: 1.4em;

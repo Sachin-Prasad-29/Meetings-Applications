@@ -4,8 +4,10 @@ const allEmailFromTeam = [];
 const allAttendeesEmailFromAtt = [];
 
 const addMeeting = async (data) => {
+
+   
   const raw = JSON.stringify(data);
-  //console.log(raw);
+  console.log(data);
 
   const requestOptions = {
     method: "POST",
