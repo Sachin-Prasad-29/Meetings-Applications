@@ -60,6 +60,7 @@ async function onRegisterFormSubmit(event) {
   const confirmPassword = document.getElementById("confirm-Password").value; //confirm password
 
   const data = { name, email, password, confirmPassword };
+  console.log(data);
   const registrationDetails = { name, email, password };
   if (isValid(data)) {
     register(registrationDetails);
