@@ -1,14 +1,15 @@
 /* This is the universal css file */
-@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Signika&display=swap');
+
 * {
     box-sizing: border-box;
 }
 body {
-    font-family: 'Hammersmith One', sans-serif;
+    font-family: 'Signika', sans-serif;
     font-size: 1em;
 }
-button{
-    font-family: 'Hammersmith One', sans-serif;
+button {
+    font-family: 'Signika', sans-serif;
 }
 .container {
     width: 85%;
@@ -163,14 +164,11 @@ nav div div a:hover {
     place-content: center;
 }
 
-input{
+input {
     border-radius: 0;
     border: none;
-    outline: 1px solid lightgrey;
 }
-textarea{
+textarea {
     border-radius: 0;
     border: none;
-    outline: 1px solid lightgrey;
-
 }

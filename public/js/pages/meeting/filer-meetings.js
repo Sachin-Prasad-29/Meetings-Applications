@@ -1,4 +1,4 @@
-// this method will show all the user in the system at select member option
+import {months} from '../../services/util.services.js'
 let period;
 let search;
 let myEmail;
@@ -41,22 +41,6 @@ const disPlayAllFetchedMeetings = async (data) => {
   const meetingDetailEl = document.querySelector("#filter-meeting-details");
   meetingDetailEl.innerHTML = "";
   let meetingDetailContainerStr = "";
-
-  const month = [
-    "January",
-    "Febuary",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
   for (let i = 0; i < data.length; i++) {
     const attendeesArr = [];
     for (let j = 0; j < data[i].attendees.length; j++) {
@@ -67,7 +51,7 @@ const disPlayAllFetchedMeetings = async (data) => {
     let date = data[i].date.substring();
     date = date
       .substring(8, 10)
-      .concat(" ".concat(month[parseInt(date.substring(5, 7)) - 1].concat(" ".concat(date.substring(0, 4)))));
+      .concat(" ".concat(months[parseInt(date.substring(5, 7)) - 1].concat(" ".concat(date.substring(0, 4)))));
     const name = data[i].name;
     let startTimehour = data[i].startTime.hours;
     if (startTimehour < 10) startTimehour = "0".concat(startTimehour);

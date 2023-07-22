@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calender</title>
-    <script src="js/services/check-auth.js"></script>
+    <script type='module' src="js/services/check-auth.js"></script>
     <link rel="stylesheet" href="external/normalize.css/normalize.css" />
     <link rel="stylesheet" href="external/@fortawesome/fontawesome-free/css/all.min.css" />
     <link rel="stylesheet" href="css/utils.css" />
@@ -40,11 +40,11 @@
       </div>
     </nav>
     <div class="container">
-      <h1 class="mb-1">Calender</h1>
+      <h1 class="mb-1">Calendar</h1>
       <hr />
       <div class="today-date-Cal-div">
         <h3 class="todays-date m-0" id="today-date"></h3>
-        <input type="date" id="myDate" value="2022-01-01" class="calender-block" onchange="handler(event);" />
+        <input type="date" id="myDate" class="calender-block" />
       </div>
       <div class="text-gray font-bold" id="todays-day">Saturday</div>
     </div>
@@ -151,7 +151,7 @@
       <div class="main-meeting-details-div"></div>
     </div>
 
-    <script src="js/nav.js"></script>
-    <script src="js/pages/calender.js"></script>
+    <script type='module' src="js/nav.js"></script>
+    <script type='module' src="js/pages/calendar/calender.js"></script>
   </body>
 </html>
